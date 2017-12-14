@@ -1,16 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-def trade_spider(max_pages):
-    page = 1
-    while page <= max_pages:
-        url = 'website.php?page=' + str(page)
-        source_code = requests.get(url)
-        plain_text = source_code.text
-        soup = BeautifulSoup(plain_text)
-        for link in soup.findAll('a', {'class': ''}):
-            href = link.get('href')
-            print(href)
-        page += 1
+def trade_spider(pageType,timeType):
+    url = 'http://www.cwb.gov.tw/V7/forecast/town368/towns/6600400.htm?type=' + str(pageType) + '&time=' + str(timeType)
+    source_code = requests.get(url)
+    plain_text = source_code.text
+    soup = BeautifulSoup(plain_text)
+    for link in soup.findAll('span', {'class': 'Forecast-box-mor1'}):
+        s = link.string
+        print(s)
 
-trade_spider(1)
+time = '7Day'
+trade_spider(Weather,time)
