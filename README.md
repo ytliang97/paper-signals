@@ -1,4 +1,7 @@
-# Paper Signals
+# Paper Signals for python!
+
+> this branch will try to make paper signal with beglebone and python language.
+
 Paper Signals is a [Voice Experiment](https://experiments.withgoogle.com/voice) that lets you make little voice controlled objects that track simple things, like weather. You can build any of the example Paper Signals we have on [g.co/papersignals](https://papersignals.withgoogle.com/#), or use this repo to make your own Custom Signal. 
 
 ![PaperSignals](./images/image2.jpg)
